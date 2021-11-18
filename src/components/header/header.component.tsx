@@ -1,9 +1,10 @@
 import React from "react";
+import {ReactComponent as Logo} from "../../assets/img/logo.svg";
 
-const Header: React.FC = () => {
+function Header() {
     return (
-        <div>
-            It's header
+        <div className="app">
+            <Logo className="h-64" />
         </div>
     )
 }

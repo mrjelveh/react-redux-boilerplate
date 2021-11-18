@@ -1,11 +1,13 @@
 import React from 'react';
-import Header from "../../components/header/header.component";
+import { selectLoginState } from '../../redux/authentication/authentication.slice';
+import { useAppSelector } from '../../redux/store';
 
-const Dashboard = () => {
+function Dashboard() {
+    const { isAuth } = useAppSelector(selectLoginState)
     return(
-        <div>
-            <Header />
-            I'm Dashboard
+        <div className="app">
+            <p>auth state: {isAuth.toString()}</p>
+            <h4>Dashboard Page</h4>
         </div>
     )
 }
