@@ -23,7 +23,7 @@ const PrivateRoute: React.FC<PRIVATEROUTETYPE> = ({
                 roleRequest(roles) && isAuth ? (
                     <Component {...props} />
                 ) : (
-                    <Redirect to="/" />
+                    <Redirect to="/login" />
                 )
             )
         }>

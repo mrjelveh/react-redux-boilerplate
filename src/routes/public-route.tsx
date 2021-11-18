@@ -1,7 +1,6 @@
 
 
 import {Route, RouteComponentProps, Redirect} from 'react-router-dom'
-import roleRequest from "./role-request";
 import React from "react";
 import {ConnectedComponent} from "react-redux";
 import { useAppSelector} from "../redux/store";
@@ -22,7 +21,7 @@ const PublicRoute: React.FC<PUBLICROUTETYPE> = ({
     const { isAuth } = useAppSelector(selectLoginState)
     return (
         <Route path={path} exact={exact} {...otherProps} component={(props: RouteComponentProps) => (
-            roleRequest(roles) && isAuth ? (
+            !isAuth ? (
                 <Component {...props} />
             ): (
                 <Redirect to="/" />
