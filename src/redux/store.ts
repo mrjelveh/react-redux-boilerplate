@@ -1,7 +1,7 @@
 import {configureStore} from '@reduxjs/toolkit';
 import authenticationSlice from "./authentication/authentication.slice";
-import {Middlewares} from "./middlewares/middlewares";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
+import Middlewares from './middlewares/middlewares';
 
 export const store = configureStore({
     reducer: {
