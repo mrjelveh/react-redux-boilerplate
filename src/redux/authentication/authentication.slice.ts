@@ -7,6 +7,10 @@ const initialLoginState = {
     error: "",
 };
 
+// simple authentication slice to manage authentication state
+// If you want to know more about redux slices, check out the docs: 
+//      https://redux-toolkit.js.org/api/createSlice
+
 const authenticationSlice = createSlice({
     name: "authenticationSlice",
     initialState: initialLoginState,
