@@ -1,10 +1,10 @@
 
-const roleRequest = (role: string | undefined) => {
-    const permittedRole = JSON.parse(localStorage.getItem('userRole')!)
-    if(role === 'all') {
+const roleRequest = (roles: string[] | null, permittedRole: string | null) => {
+    // we assume that some pages are shared for more than one user so it could be array of roles
+    if(roles?.includes('all') || permittedRole === null) {
         return true
     }
-    return permittedRole === role
+    return roles?.includes(permittedRole)
 }
 
 export default roleRequest;
