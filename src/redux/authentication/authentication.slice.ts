@@ -1,17 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-
-type STATETYPE = {
-    isLoading: boolean;
-    isAuth: boolean;
-    permittedRole: string | null;
-    error: string;
-}
-const initialLoginState: STATETYPE = {
+const initialLoginState = {
     isLoading: false,
     isAuth: false,
-    permittedRole: null,
     error: "",
 };
 
@@ -26,10 +18,9 @@ const authenticationSlice = createSlice({
         loginPending: (state) => {
             state.isLoading = true;
         },
-        loginSuccess: (state, action: PayloadAction<{permittedRole: string | null}>) => {
+        loginSuccess: (state) => {
             state.isLoading = false;
             state.isAuth = true;
-            state.permittedRole = action.payload.permittedRole;
             state.error = "";
         },
         loginFail: (state, action: PayloadAction<string>) => {
