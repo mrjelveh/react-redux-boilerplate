@@ -10,12 +10,11 @@
 2.  Move to the appropriate directory: `cd <YOUR_PROJECT_NAME>`.<br />
 3.  Run `yarn` in order to install dependencies and clean the git repo.<br />
 4.  You can run `yarn start` to see the app at `http://localhost:3000`.
-    
-    
+
 ## Inside this boilerplate:
 
-- A simple token based authentication with redux
-- Structure based on [airbnb styleguide](https://github.com/airbnb/javascript/tree/master/react)
+- A simple token based <b>authentication</b> with redux
+- Structure based on [airbnb styleguide](https://github.com/airbnb/javascript/tree/master/react) and [CRA](https://create-react-app.dev/)
 
 ## Special library/plugins that you should know I used in this repository:
 
@@ -24,9 +23,9 @@
 ```
 - reduxjs/toolkit
 - axios
-- node-sass
+- sass
 - react-redux
-- react-router-dom
+- react-router-dom (v6)
 - redux-thunk
 ```
 
@@ -38,4 +37,3 @@
 - prettier
 - redux-logger
 ```
-    
