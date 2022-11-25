@@ -1,20 +1,21 @@
 import React from "react";
-import { BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Header from "./components/header/header.component";
 import Dashboard from "./containers/dashboard/dashboard.page";
 import Login from "./containers/login/login.page";
-import PrivateRoute from "./routes/private-route";
-import PublicRoute from "./routes/public-route";
+import PrivateRoutes from "./routes/private-route";
 
 function App() {
   return (
-    <Router>
+    <>
       <Header />
-      <Switch>
-        <PublicRoute path="/login" component={Login} />
-        <PrivateRoute path="/" roles={"all"} component={Dashboard} />
-      </Switch>
-    </Router>
+      <Routes>
+        <Route element={<PrivateRoutes roles={["admin"]} />}>
+          <Route path="/" element={<Dashboard />} />
+        </Route>
+        <Route path="login" element={<Login />} />
+      </Routes>
+    </>
   );
 }
 
