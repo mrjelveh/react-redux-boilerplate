@@ -23,8 +23,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "env-cmd -e development react-scripts start",
+    "build": "env-cmd -e production react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prepare": "husky install"
@@ -50,6 +50,7 @@
   "devDependencies": {
     "@types/react-router-dom": "^5.3.3",
     "@types/redux-logger": "^3.0.8",
+    "env-cmd": "^10.1.0",
     "husky": "^8.0.2",
     "lint-staged": "^13.0.3",
     "prettier": "^2.8.0",
